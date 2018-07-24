@@ -104,13 +104,17 @@ public class ArticleListActivity extends AppCompatActivity implements
         @Override
         public void onReceive(Context context, Intent intent) {
             if (UpdaterService.BROADCAST_ACTION_STATE_CHANGE.equals(intent.getAction())) {
+                Log.d("tag", "in if");
                 mIsRefreshing = intent.getBooleanExtra(UpdaterService.EXTRA_REFRESHING, false);
                 updateRefreshingUI();
             }
+            Log.d("tag", "in else");
         }
     };
 
     private void updateRefreshingUI() {
+        Log.d("tag", "in updateRefreshingUI");
+
         mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
     }
 

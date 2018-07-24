@@ -1,3 +1,47 @@
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/detail_content"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:fitsSystemWindows="true">-->
+
+<!--<android.support.design.widget.AppBarLayout--><!--android:id="@+id/appbar1"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:fitsSystemWindows="true"--><!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+
+
+<!--<android.support.design.widget.CollapsingToolbarLayout--><!--android:id="@+id/collapsing"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:fitsSystemWindows="true"--><!--app:layout_scrollFlags="scroll">-->
+
+
+<!--<FrameLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+
+<!--<ImageView--><!--android:id="@+id/photo"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:scaleType="centerCrop" />-->
+
+<!--<View--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:background="@drawable/photo_background_protection"-->
+
+<!--/>-->
+
+<!--<RelativeLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:alpha="0.7"--><!--android:background="#222222">-->
+
+<!--<LinearLayout--><!--android:id="@+id/meta_bar"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:orientation="vertical"--><!--android:paddingBottom="16dp"--><!--android:paddingLeft="16dp"--><!--android:paddingRight="16dp"--><!--android:paddingTop="16dp">-->
+
+<!--<TextView--><!--android:id="@+id/article_title"--><!--style="?android:attr/textAppearanceLarge"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:fontFamily="sans-serif-condensed"--><!--android:paddingBottom="0dp"--><!--android:textColor="#fff"--><!--android:textSize="24sp"--><!--android:textStyle="bold" />-->
+
+<!--<TextView--><!--android:id="@+id/article_byline"--><!--style="?android:attr/textAppearanceSmall"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:textColor="#8fff"--><!--android:textSize="16sp" />--><!--</LinearLayout>--><!--</RelativeLayout>-->
+
+<!--</FrameLayout>-->
+
+<!--<android.support.v7.widget.Toolbar--><!--android:id="@+id/detail_toolbar"--><!--android:layout_width="match_parent"--><!--android:layout_height="?attr/actionBarSize"--><!--android:background="?attr/colorPrimary"--><!--android:fitsSystemWindows="true"--><!--android:minHeight="?attr/actionBarSize"--><!--app:layout_collapseMode="pin"--><!--app:layout_scrollFlags="scroll|exitUntilCollapsed"--><!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+
+<!--</android.support.design.widget.CollapsingToolbarLayout>--><!--</android.support.design.widget.AppBarLayout>-->
+
+
+<!--<android.support.v4.widget.NestedScrollView--><!--android:id="@+id/movie_detail_container"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+<!--<LinearLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:layout_marginTop="12dp"--><!--android:orientation="vertical">-->
+
+
+<!--<TextView--><!--android:id="@+id/article_body"--><!--style="?android:attr/textAppearanceMedium"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_marginLeft="8dp"--><!--android:layout_marginRight="8dp"--><!--android:background="?attr/selectableItemBackground"--><!--android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"--><!--android:paddingBottom="8dp"--><!--android:textAlignment="viewStart"--><!--android:textColor="@android:color/black"--><!--android:textColorLink="@color/cardview_light_background"--><!--android:textSize="16sp"--><!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />--><!--</LinearLayout>--><!--</android.support.v4.widget.NestedScrollView>-->
+
+<!--<android.support.design.widget.FloatingActionButton--><!--android:id="@+id/share_fab"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_margin="2dp"--><!--android:clickable="true"--><!--android:contentDescription="@string/action_share"--><!--android:src="@drawable/ic_share"--><!--app:layout_anchor="@id/appbar1"--><!--app:layout_anchorGravity="bottom|end" />-->
+
+<!--</android.support.design.widget.CoordinatorLayout>-->
+
+
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/detail_content"
@@ -16,69 +60,73 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll">
 
 
-            <FrameLayout
+            <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+
+            <ImageView
+                android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
 
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/photo_background_protection"-->
 
-                <ImageView
-                    android:id="@+id/photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop" />
+            <!--/>-->
 
-                <View
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:alpha="0.7"-->
+            <!--android:background="#222222">-->
+
+            <LinearLayout
+                android:id="@+id/meta_bar"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:alpha="0.8"
+                android:background="@android:color/black"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:id="@+id/article_title"
+                    style="?android:attr/textAppearanceLarge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/photo_background_protection"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingBottom="0dp"
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-                    />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/article_byline"
+                    style="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.7"
-                    android:background="#222222">
+                    android:textColor="#8fff"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <!--</RelativeLayout>-->
 
-                    <LinearLayout
-                        android:id="@+id/meta_bar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:orientation="vertical"
-                        android:paddingBottom="16dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:paddingTop="16dp">
-
-                        <TextView
-                            android:id="@+id/article_title"
-                            style="?android:attr/textAppearanceLarge"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-condensed"
-                            android:paddingBottom="0dp"
-                            android:textColor="#fff"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/article_byline"
-                            style="?android:attr/textAppearanceSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8fff"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-                </RelativeLayout>
-
-            </FrameLayout>
+            <!--</FrameLayout>-->
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/detail_toolbar"

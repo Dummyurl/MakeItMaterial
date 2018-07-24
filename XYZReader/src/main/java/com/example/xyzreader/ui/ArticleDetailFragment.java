@@ -213,10 +213,6 @@ public class ArticleDetailFragment extends Fragment implements
                             if (bitmap != null) {
                                 Palette p = Palette.generate(bitmap, 12);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
-
-                                mRootView.findViewById(R.id.meta_bar)
-                                        .setBackgroundColor(mColour);
-
                             }
                         }
 
