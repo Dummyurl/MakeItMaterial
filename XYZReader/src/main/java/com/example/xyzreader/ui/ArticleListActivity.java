@@ -47,19 +47,13 @@ import static java.util.Arrays.asList;
 public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    //public List<String> coloursHolder =  asList("#90A4AE","#455A64","#78909C","#A5D6A7","#CFD8DC");
-
-//    public List<String> coloursHolder =  asList("#FF8A65","#A1887F","#EC407A","#AB47BC","#CFD8DC");
-
     private static final String TAG = ArticleListActivity.class.toString();
     private Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
-    // Use default locale format
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
-    // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
     @Override
@@ -71,7 +65,12 @@ public class ArticleListActivity extends AppCompatActivity implements
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
-
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateRefreshingUI();
+            }
+        });
         if (savedInstanceState == null) {
             refresh();
         }
@@ -87,7 +86,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         registerReceiver(mRefreshingReceiver,
                 new IntentFilter(UpdaterService.BROADCAST_ACTION_STATE_CHANGE));
         if ( mRecyclerView.getAdapter()!=null) {
-            //return tiles back to original position when returning back from the detail screen
             mRecyclerView.getAdapter().notifyDataSetChanged();
         }
     }
@@ -104,17 +102,13 @@ public class ArticleListActivity extends AppCompatActivity implements
         @Override
         public void onReceive(Context context, Intent intent) {
             if (UpdaterService.BROADCAST_ACTION_STATE_CHANGE.equals(intent.getAction())) {
-                Log.d("tag", "in if");
                 mIsRefreshing = intent.getBooleanExtra(UpdaterService.EXTRA_REFRESHING, false);
                 updateRefreshingUI();
             }
-            Log.d("tag", "in else");
         }
     };
 
     private void updateRefreshingUI() {
-        Log.d("tag", "in updateRefreshingUI");
-
         mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
     }
 
@@ -162,14 +156,8 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    int cls = (int) vh.itemView.getTag();
-
-//                    ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", -250);
-//                    animator.setDuration(500);
-//                    animator.start();
                     Intent detailIntent =new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
-//                    detailIntent.putExtra("colour",cls);
                     startActivity(detailIntent);
                     overridePendingTransition(R.anim.slide_bottom,R.anim.slide_up);
 
@@ -214,10 +202,6 @@ public class ArticleListActivity extends AppCompatActivity implements
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
                     ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
             holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
-//            int cls = Color.parseColor(coloursHolder.get(new Random().nextInt(4)));
-//            holder.itemView.setBackgroundColor(cls);
-//            holder.itemView.setTag(cls);
-
         }
 
         @Override

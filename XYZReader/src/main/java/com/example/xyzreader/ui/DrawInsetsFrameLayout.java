@@ -123,28 +123,24 @@ public class DrawInsetsFrameLayout extends FrameLayout {
         int height = getHeight();
 
         if (mInsets != null) {
-            // Top
             mTempRect.set(0, 0, width, mInsets.top);
             if (mInsetBackground != null) {
                 mInsetBackground.setBounds(mTempRect);
                 mInsetBackground.draw(canvas);
             }
 
-            // Bottom
             mTempRect.set(0, height - mInsets.bottom, width, height);
             if (mInsetBackground != null) {
                 mInsetBackground.setBounds(mTempRect);
                 mInsetBackground.draw(canvas);
             }
 
-            // Left
             mTempRect.set(0, mInsets.top, mInsets.left, height - mInsets.bottom);
             if (mInsetBackground != null) {
                 mInsetBackground.setBounds(mTempRect);
                 mInsetBackground.draw(canvas);
             }
 
-            // Right
             mTempRect.set(width - mInsets.right, mInsets.top, width, height - mInsets.bottom);
             if (mInsetBackground != null) {
                 mInsetBackground.setBounds(mTempRect);

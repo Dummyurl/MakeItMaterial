@@ -54,7 +54,7 @@ public class ArticleDetailActivity extends AppCompatActivity
         }*/
         setContentView(R.layout.activity_article_detail);
 
-        // getLoaderManager(). initLoader(0, null, this);
+         getLoaderManager(). initLoader(0, null, this);
         getLoaderManager().restartLoader(0, null, this);
 
         mPagerAdapter = new MyPagerAdapter(getFragmentManager());
@@ -82,14 +82,11 @@ public class ArticleDetailActivity extends AppCompatActivity
             if (getIntent() != null && getIntent().getData() != null) {
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
                 mSelectedItemId = mStartId;
-//                mColour= getIntent().getExtras().getInt("colour");
             }
         }
         else {
             mPagerItem = savedInstanceState.getLong("pagerItem");
             mStartId= mSelectedItemId = mPagerItem;
-//            mColour= savedInstanceState.getInt("colour");;
-
         }
 
     }
@@ -104,7 +101,6 @@ public class ArticleDetailActivity extends AppCompatActivity
         mCursor = cursor;
         mPagerAdapter.notifyDataSetChanged();
 
-        // Select the start ID
         if (mStartId > 0) {
             mCursor.moveToFirst();
             // TODO: optimize
