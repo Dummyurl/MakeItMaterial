@@ -1,6 +1,7 @@
 Make It Material created as a part of Udacity [Android Developer Nanodegree Program](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801).
 
 ![alt text](http://images.vfl.ru/ii/1535400242/0fd869fc/23082106.jpg)
+![alt text](http://images.vfl.ru/ii/1535398414/9e3d21fd/23081697.jpg)
 
 ## Covers
 This App features covers the following aspects:
